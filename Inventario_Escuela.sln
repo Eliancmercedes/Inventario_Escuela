@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario_Escuela", "Inventario_Escuela\Inventario_Escuela.csproj", "{5CD21441-2159-4663-A4F0-3320A3993901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "Inventario_Escuela\CapaDatos.csproj", "{5CD21441-2159-4663-A4F0-3320A3993901}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{FD52194C-9205-4F6C-9177-22E36E635BFB}"
 EndProject
