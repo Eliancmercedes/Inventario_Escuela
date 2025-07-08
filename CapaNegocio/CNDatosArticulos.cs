@@ -164,6 +164,17 @@ namespace CapaNegocio
             using (SqlConnection conn = new SqlConnection(ConexionDatos.conexion))
             {
                 conn.Open();
+                // Primero verificar si existe el artículo
+                string verificarQuery = "SELECT COUNT(*) FROM ArticuloEscolar WHERE IdArticulo = @Id";
+                SqlCommand verificarCmd = new SqlCommand(verificarQuery, conn);
+                verificarCmd.Parameters.AddWithValue("@Id", id);
+                int existe = (int)verificarCmd.ExecuteScalar();
+
+                if (existe == 0)
+                {
+                    throw new Exception("El artículo con ese ID no existe.");
+                }
+
                 string query = "DELETE FROM ArticuloEscolar WHERE IdArticulo = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);

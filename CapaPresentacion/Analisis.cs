@@ -26,6 +26,12 @@ namespace CapaPresentacion
             formsPlotCantidad.BackColor = this.BackColor; 
             formsPlotPromedio.BackColor = this.BackColor;
             formsPlotMarca.BackColor = this.BackColor;
+
+            
+
+
+
+
             this.FormClosing += Analisis_FormClosing;
 
 

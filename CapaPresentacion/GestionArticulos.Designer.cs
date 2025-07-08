@@ -42,6 +42,7 @@
             label3 = new Label();
             btnBusquedaAvz = new Button();
             btnMenu = new Button();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
@@ -200,6 +201,18 @@
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(11, 153);
+            label4.Name = "label4";
+            label4.Size = new Size(141, 22);
+            label4.TabIndex = 14;
+            label4.Text = "Seleccionar tipo";
+            // 
             // GestionArticulos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -207,6 +220,7 @@
             BackgroundImage = Properties.Resources.Diseño_sin_título__8_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1284, 611);
+            Controls.Add(label4);
             Controls.Add(btnMenu);
             Controls.Add(btnBusquedaAvz);
             Controls.Add(label3);
@@ -249,5 +263,6 @@
         private Label label3;
         private Button btnBusquedaAvz;
         private Button btnMenu;
+        private Label label4;
     }
 }

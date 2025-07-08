@@ -69,13 +69,26 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor, ingresa un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+
+            }
+            try
+            {
+                datos.EliminarArticulo(id);
+                MessageBox.Show("Articulo eliminado correctamente");
+            }
+            catch (Exception ex)
+
+
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            datos.EliminarArticulo(id);
-            MessageBox.Show("Artículo eliminado correctamente.");
-
-
         }
+
+            
+
+
+        
         private void btnMostrar_Click(Object sender, EventArgs e)
         {
             string tipo = cbTipoArticulo.SelectedItem.ToString();

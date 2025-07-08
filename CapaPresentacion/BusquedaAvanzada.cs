@@ -35,34 +35,27 @@ namespace CapaPresentacion
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string marcaFiltro = txtMarca.Text.ToLower();
+            string marcaFiltro = txtMarca.Text.ToLower().Trim();
             string tipoSeleccionado = cbTipo.SelectedItem.ToString();
-            int PrecioMin = 0;
-            int PrecioMax = int.MaxValue;
 
+            bool tienePrecioMin = int.TryParse(txtPrecioMin.Text, out int precioMin);
+            bool tienePrecioMax = int.TryParse(txtPrecioMax.Text, out int precioMax);
 
-            // Validación opcional de precios
-            if (!string.IsNullOrWhiteSpace(txtPrecioMin.Text))
-                int.TryParse(txtPrecioMin.Text, out PrecioMin);
-            if (!string.IsNullOrWhiteSpace(txtPrecioMax.Text))
-                int.TryParse(txtPrecioMax.Text, out PrecioMax);
-
-            // Búsqueda con LINQ incluyendo filtro por tipo
             var resultado = TodosLosArticulos
                 .Where(a =>
                     (tipoSeleccionado == "Todos" || a.Tipo == tipoSeleccionado) &&
-                    a.Marca.ToLower().Contains(marcaFiltro) &&
-                    a.Precio >= PrecioMin &&
-                    a.Precio <= PrecioMax
-                ).ToList();
-
+                    (string.IsNullOrWhiteSpace(marcaFiltro) || a.Marca.ToLower().Contains(marcaFiltro)) &&
+                    (!tienePrecioMin || a.Precio >= precioMin) &&
+                    (!tienePrecioMax || a.Precio <= precioMax)
+                )
+                .ToList();
 
             lstResultado.Items.Clear();
 
             if (resultado.Count == 0)
             {
-                MessageBox.Show("No se ecnontraron articulos con esa marca", "Sin resultado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                lstResultado.Items.Add("No se escontraron resultados");
+                MessageBox.Show("No se encontraron artículos con esos criterios.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lstResultado.Items.Add("No se encontraron resultados.");
                 return;
             }
 
@@ -70,9 +63,10 @@ namespace CapaPresentacion
             {
                 string descripcion = articulo.ObtenerDescripcion(); // Método Virtual
                 string categoria = articulo.ObtenerCategoria();     // Método Abstracto
-                lstResultado.Items.Add($"{descripcion} | Categoria: {categoria}");
+                lstResultado.Items.Add($"{descripcion} | Categoría: {categoria}");
             }
         }
+
         private void txt_BorrarTexto(object sender, EventArgs e)
         {
             TextBox txt = sender as TextBox;
