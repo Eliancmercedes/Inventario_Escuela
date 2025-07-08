@@ -18,7 +18,7 @@ namespace CapaNegocio
         //Implementacion del metodo abstracto
         public override string ObtenerCategoria()
         {
-            return "Papeleria";
+            return "Instrumento de Medicion";
         }
 
         //Sobreescribir metodo virtual

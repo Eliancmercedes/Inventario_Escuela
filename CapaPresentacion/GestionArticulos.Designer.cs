@@ -40,79 +40,101 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            btnBusquedaAvz = new Button();
+            btnMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
             // cbTipoArticulo
             // 
+            cbTipoArticulo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTipoArticulo.Font = new Font("Times New Roman", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             cbTipoArticulo.FormattingEnabled = true;
-            cbTipoArticulo.Location = new Point(31, 36);
+            cbTipoArticulo.Location = new Point(12, 177);
+            cbTipoArticulo.Margin = new Padding(3, 2, 3, 2);
             cbTipoArticulo.Name = "cbTipoArticulo";
-            cbTipoArticulo.Size = new Size(151, 28);
+            cbTipoArticulo.Size = new Size(133, 23);
             cbTipoArticulo.TabIndex = 0;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(247, 36);
+            txtMarca.Location = new Point(151, 261);
+            txtMarca.Margin = new Padding(3, 2, 3, 2);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(125, 27);
+            txtMarca.Size = new Size(110, 23);
             txtMarca.TabIndex = 1;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(247, 79);
+            txtPrecio.Location = new Point(151, 298);
+            txtPrecio.Margin = new Padding(3, 2, 3, 2);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(125, 27);
+            txtPrecio.Size = new Size(110, 23);
             txtPrecio.TabIndex = 2;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(31, 257);
+            btnAgregar.Font = new Font("Rockwell", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAgregar.Location = new Point(12, 424);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(123, 37);
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(31, 321);
+            btnEliminar.Font = new Font("Rockwell", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(277, 333);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(91, 28);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // txtIdEliminar
             // 
-            txtIdEliminar.Location = new Point(247, 131);
+            txtIdEliminar.Location = new Point(151, 338);
+            txtIdEliminar.Margin = new Padding(3, 2, 3, 2);
             txtIdEliminar.Name = "txtIdEliminar";
-            txtIdEliminar.Size = new Size(125, 27);
+            txtIdEliminar.Size = new Size(110, 23);
             txtIdEliminar.TabIndex = 5;
             // 
             // btnMostrar
             // 
-            btnMostrar.Location = new Point(31, 387);
+            btnMostrar.Font = new Font("Rockwell", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnMostrar.Location = new Point(12, 477);
+            btnMostrar.Margin = new Padding(3, 2, 3, 2);
             btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(94, 29);
+            btnMostrar.Size = new Size(140, 33);
             btnMostrar.TabIndex = 6;
             btnMostrar.Text = "Mostrar";
             btnMostrar.UseVisualStyleBackColor = true;
             // 
             // dgvArticulos
             // 
+            dgvArticulos.AllowUserToAddRows = false;
+            dgvArticulos.AllowUserToDeleteRows = false;
+            dgvArticulos.AllowUserToResizeColumns = false;
+            dgvArticulos.AllowUserToResizeRows = false;
             dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvArticulos.Location = new Point(294, 185);
+            dgvArticulos.Location = new Point(659, 286);
+            dgvArticulos.Margin = new Padding(3, 2, 3, 2);
             dgvArticulos.Name = "dgvArticulos";
+            dgvArticulos.ReadOnly = true;
             dgvArticulos.RowHeadersWidth = 51;
-            dgvArticulos.Size = new Size(475, 253);
+            dgvArticulos.Size = new Size(459, 224);
             dgvArticulos.TabIndex = 7;
             // 
             // btnVerGraficas
             // 
-            btnVerGraficas.Location = new Point(149, 387);
+            btnVerGraficas.Font = new Font("Rockwell", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnVerGraficas.Location = new Point(380, 487);
+            btnVerGraficas.Margin = new Padding(3, 2, 3, 2);
             btnVerGraficas.Name = "btnVerGraficas";
-            btnVerGraficas.Size = new Size(129, 29);
+            btnVerGraficas.Size = new Size(147, 39);
             btnVerGraficas.TabIndex = 8;
             btnVerGraficas.Text = "Ver Graficas";
             btnVerGraficas.UseVisualStyleBackColor = true;
@@ -121,35 +143,72 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(401, 39);
+            label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(4, 260);
             label1.Name = "label1";
-            label1.Size = new Size(110, 20);
+            label1.Size = new Size(138, 22);
             label1.TabIndex = 9;
             label1.Text = "Coloque Marca";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(401, 86);
+            label2.BackColor = Color.Transparent;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(4, 297);
             label2.Name = "label2";
-            label2.Size = new Size(110, 20);
+            label2.Size = new Size(136, 22);
             label2.TabIndex = 10;
             label2.Text = "Coloque Precio";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(402, 138);
+            label3.BackColor = Color.Transparent;
+            label3.FlatStyle = FlatStyle.Flat;
+            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(4, 339);
             label3.Name = "label3";
-            label3.Size = new Size(109, 20);
+            label3.Size = new Size(140, 22);
             label3.TabIndex = 11;
             label3.Text = "Eliminar por ID";
             // 
+            // btnBusquedaAvz
+            // 
+            btnBusquedaAvz.Font = new Font("Rockwell", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnBusquedaAvz.Location = new Point(371, 541);
+            btnBusquedaAvz.Margin = new Padding(3, 2, 3, 2);
+            btnBusquedaAvz.Name = "btnBusquedaAvz";
+            btnBusquedaAvz.Size = new Size(167, 33);
+            btnBusquedaAvz.TabIndex = 12;
+            btnBusquedaAvz.Text = "Ir a busqueda avanzada";
+            btnBusquedaAvz.UseVisualStyleBackColor = true;
+            btnBusquedaAvz.Click += btnBusquedaAvz_Click;
+            // 
+            // btnMenu
+            // 
+            btnMenu.Font = new Font("Rockwell", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnMenu.Location = new Point(1158, 24);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(93, 29);
+            btnMenu.TabIndex = 13;
+            btnMenu.Text = "Menu";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
+            // 
             // GestionArticulos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = Properties.Resources.Diseño_sin_título__8_;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1284, 611);
+            Controls.Add(btnMenu);
+            Controls.Add(btnBusquedaAvz);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -162,6 +221,10 @@
             Controls.Add(txtPrecio);
             Controls.Add(txtMarca);
             Controls.Add(cbTipoArticulo);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "GestionArticulos";
             Text = "Form1";
             Load += GestionArticulos_Load;
@@ -184,5 +247,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button btnBusquedaAvz;
+        private Button btnMenu;
     }
 }

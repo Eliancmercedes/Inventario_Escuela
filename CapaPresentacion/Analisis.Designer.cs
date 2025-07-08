@@ -32,51 +32,89 @@
             formsPlotPromedio = new ScottPlot.WinForms.FormsPlot();
             formsPlotMarca = new ScottPlot.WinForms.FormsPlot();
             btnVolver = new Button();
+            btnBusquedaAvz = new Button();
+            btnMenu = new Button();
             SuspendLayout();
             // 
             // formsPlotCantidad
             // 
             formsPlotCantidad.DisplayScale = 1.25F;
-            formsPlotCantidad.Location = new Point(24, 219);
+            formsPlotCantidad.Location = new Point(22, 305);
+            formsPlotCantidad.Margin = new Padding(3, 2, 3, 2);
             formsPlotCantidad.Name = "formsPlotCantidad";
-            formsPlotCantidad.Size = new Size(265, 229);
+            formsPlotCantidad.Size = new Size(397, 295);
             formsPlotCantidad.TabIndex = 0;
             // 
             // formsPlotPromedio
             // 
             formsPlotPromedio.DisplayScale = 1.25F;
-            formsPlotPromedio.Location = new Point(529, 229);
+            formsPlotPromedio.Location = new Point(841, 308);
+            formsPlotPromedio.Margin = new Padding(3, 2, 3, 2);
             formsPlotPromedio.Name = "formsPlotPromedio";
-            formsPlotPromedio.Size = new Size(259, 219);
+            formsPlotPromedio.Size = new Size(431, 292);
             formsPlotPromedio.TabIndex = 1;
             // 
             // formsPlotMarca
             // 
+            formsPlotMarca.BackColor = Color.White;
             formsPlotMarca.DisplayScale = 1.25F;
-            formsPlotMarca.Location = new Point(257, -2);
+            formsPlotMarca.Location = new Point(394, 19);
+            formsPlotMarca.Margin = new Padding(3, 2, 3, 2);
             formsPlotMarca.Name = "formsPlotMarca";
-            formsPlotMarca.Size = new Size(310, 246);
+            formsPlotMarca.Size = new Size(483, 285);
             formsPlotMarca.TabIndex = 2;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(46, 25);
+            btnVolver.Font = new Font("Rockwell", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(40, 19);
+            btnVolver.Margin = new Padding(3, 2, 3, 2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(94, 29);
+            btnVolver.Size = new Size(147, 39);
             btnVolver.TabIndex = 3;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
+            // btnBusquedaAvz
+            // 
+            btnBusquedaAvz.Font = new Font("Rockwell", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnBusquedaAvz.Location = new Point(569, 445);
+            btnBusquedaAvz.Name = "btnBusquedaAvz";
+            btnBusquedaAvz.Size = new Size(147, 31);
+            btnBusquedaAvz.TabIndex = 4;
+            btnBusquedaAvz.Text = "Ir a busqueda avanzada";
+            btnBusquedaAvz.UseVisualStyleBackColor = true;
+            btnBusquedaAvz.Click += btnBusquedaAvz_Click;
+            // 
+            // btnMenu
+            // 
+            btnMenu.Font = new Font("Rockwell", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnMenu.Location = new Point(1125, 12);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(147, 39);
+            btnMenu.TabIndex = 5;
+            btnMenu.Text = "Menu";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
+            // 
             // Analisis
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = Properties.Resources.Diseño_sin_título__9_;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1284, 611);
+            Controls.Add(btnMenu);
+            Controls.Add(btnBusquedaAvz);
             Controls.Add(btnVolver);
             Controls.Add(formsPlotMarca);
             Controls.Add(formsPlotPromedio);
             Controls.Add(formsPlotCantidad);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Analisis";
             Text = "Form1";
             Load += Analisis_Load;
@@ -89,5 +127,7 @@
         private ScottPlot.WinForms.FormsPlot formsPlotPromedio;
         private ScottPlot.WinForms.FormsPlot formsPlotMarca;
         private Button btnVolver;
+        private Button btnBusquedaAvz;
+        private Button btnMenu;
     }
 }

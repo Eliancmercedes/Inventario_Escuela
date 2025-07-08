@@ -1,49 +1,13 @@
-﻿using Microsoft.Data.SqlClient;
-using CapaDatos;
-using Microsoft.Identity.Client;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-
-
+using System.Text;
+using System.Threading.Tasks;
+using CapaDatos;
+using Microsoft.Data.SqlClient;
 
 namespace CapaNegocio
 {
-    //clase abstracta   
-    public abstract class ArticuloEscolar
-    {
-        //atributos de la clase "articulos" para ser heredados en las demas
-        public int IdArticulo { get; set; }
-        public string Marca { get; set; }
-        public int Precio { get; set; }
-        public string Tipo { get; set; }
-        public ArticuloEscolar() { }
-
-
-
-        //Constructor para crear objetos con todos los datos
-        public ArticuloEscolar(int id, string marca, int precio, string tipo) 
-        { 
-
-
-            IdArticulo = id;
-            Marca = marca;
-            Precio = precio; 
-            Tipo = tipo; 
-
-           
-        }
-        //Metodo virtual que puede ser sobreescrito por las clases hijas
-        public virtual string ObtenerDescripcion()
-        {
-            return $"{Tipo} {Marca} - Precio: {Precio}";
-        }
-        //Metodo abstracto para implementarse en cada herencia
-        public abstract string ObtenerCategoria();
-    }
-    
-
-    
-    
-
     public class DatosArticulos
     {
 
@@ -182,7 +146,7 @@ namespace CapaNegocio
         //metodo insertarArticulos
         public void InsertarArticulo(ArticuloEscolar articulo)
         {
-            using(SqlConnection conn = new SqlConnection(ConexionDatos.conexion))
+            using (SqlConnection conn = new SqlConnection(ConexionDatos.conexion))
             {
                 conn.Open();
                 string query = "INSERT INTO ArticuloEscolar (Marca, Precio, TipoArticulo) VALUES (@marca, @precio, @tipo)";
@@ -207,43 +171,4 @@ namespace CapaNegocio
             }
         }
     }
-
-    public class AnalisisArticulos
-    {
-        private List<ArticuloEscolar> articulos;
-
-        //contrcutor para caragr todos los articulos una sola vez
-        public AnalisisArticulos()
-        {
-            DatosArticulos datos = new DatosArticulos();
-            articulos = datos.MostrarTodos(); //metodo
-
-        }
-        // metodo obtener cantidad de articulo por precio
-        public Dictionary<string, int > ObtenerCantidadPorTipo()
-        {
-            return articulos
-                .GroupBy(a => a.Tipo)
-                .ToDictionary(g => g.Key, g => g.Count());
-        }
-        //Metodo obtener precio promedio por tipo
-        public Dictionary<string, double> ObtenerPrecioPromedioPorTipo()
-        {
-            return articulos
-                .GroupBy(a => a.Tipo)
-                .ToDictionary(g => g.Key, g => g.Average(x => x.Precio));
-        }
-        //Metodo para obtener marca mas comun por tipo
-        public Dictionary<string, string> ObtenerMarcasComunPorTipo()
-        {
-            return articulos
-                .GroupBy(a => a.Tipo)
-                .ToDictionary(g => g.Key, g => g.GroupBy(x => x.Marca) .OrderByDescending(x=> x.Count())
-                .First().Key
-                );
-        }
-
-    }
-
-
 }

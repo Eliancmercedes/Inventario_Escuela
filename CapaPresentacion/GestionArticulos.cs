@@ -23,6 +23,10 @@ namespace CapaPresentacion
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // Para btnMostrar
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            this.FormClosing += GestionArticulos_FormClosing;
+
+
+            txtPrecio.KeyPress += SoloEnteros_KeyPress;
 
 
         }
@@ -35,8 +39,15 @@ namespace CapaPresentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string marca = txtMarca.Text;
-            int precio = int.Parse(txtPrecio.Text);
+
             string tipo = cbTipoArticulo.SelectedItem.ToString();
+
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precioDecimal))
+            {
+                MessageBox.Show("Por favor ingrese un precio valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            int precio = (int)precioDecimal;
 
             ArticuloEscolar articulo;
 
@@ -54,9 +65,16 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtIdEliminar.Text);
+            if (!int.TryParse(txtIdEliminar.Text, out int id))
+            {
+                MessageBox.Show("Por favor, ingresa un ID válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             datos.EliminarArticulo(id);
-            MessageBox.Show("Articulo eliminado correctamente");
+            MessageBox.Show("Artículo eliminado correctamente.");
+
+
         }
         private void btnMostrar_Click(Object sender, EventArgs e)
         {
@@ -65,10 +83,61 @@ namespace CapaPresentacion
             dgvArticulos.DataSource = lista;
         }
 
+        private void SoloEnteros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                MessageBox.Show("El precio debe ser un numero entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
+            else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
         private void btnVerGraficas_Click(object sender, EventArgs e)
         {
-            Analisis ventanaGraficas = new Analisis();
-            ventanaGraficas.ShowDialog();
+            this.Hide(); // Oculta el formulario actual
+            Analisis analisis = new Analisis(this);
+            analisis.FormClosed += (s, args) => this.Close(); // Cierra el anterior cuando el nuevo se cierre
+            analisis.Show();
+        }
+
+        private void btnBusquedaAvz_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Oculta el formulario actual
+            BusquedaAvanzada busquedaAvanzada = new BusquedaAvanzada();
+            busquedaAvanzada.FormClosed += (s, args) => this.Close(); // Cierra el anterior cuando el nuevo se cierre
+            busquedaAvanzada.Show();
+        }
+        
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PanelPrincipal ventanaPanelPrincial = new PanelPrincipal();
+            ventanaPanelPrincial.FormClosed += (s, args) => this.Close();
+            ventanaPanelPrincial.Show();
+
+        }
+        private void GestionArticulos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cuando se cierre GestionArticulos, abre PanelPrincipal si no ya está abierto
+            if (Application.OpenForms.OfType<PanelPrincipal>().Count() == 0)
+            {
+                PanelPrincipal menu = new PanelPrincipal();
+                menu.Show();
+            }
+        }
+
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
