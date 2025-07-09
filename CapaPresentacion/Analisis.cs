@@ -159,12 +159,9 @@ namespace CapaPresentacion
 
             plt.Title("Marca más común \npor tipo", size: 20);
 
-            double xMin = -1.1;
-            double xMax = 1.1;
-            double yMin = -1.5;
-            double yMax = 1.0;
+            double radius = 1.2;
+            plt.Axes.SetLimits(-radius, radius, -radius, radius);
 
-            plt.Axes.SetLimits(xMin, xMax, yMin, yMax);
 
 
 

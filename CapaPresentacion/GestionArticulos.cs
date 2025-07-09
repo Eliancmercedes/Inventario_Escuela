@@ -40,6 +40,12 @@ namespace CapaPresentacion
         {
             string marca = txtMarca.Text;
 
+            if(string.IsNullOrEmpty(marca) )
+            {
+                MessageBox.Show("Por favor, ingrese una marca.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string tipo = cbTipoArticulo.SelectedItem.ToString();
 
             if (!decimal.TryParse(txtPrecio.Text, out decimal precioDecimal))

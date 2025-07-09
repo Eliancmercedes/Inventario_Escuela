@@ -144,6 +144,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_and_White_Vintage_School_Logo__10_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue and White Vintage School Logo (10)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_and_White_Vintage_School_Logo__11_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue and White Vintage School Logo (11)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_and_White_Vintage_School_Logo__2_ {
             get {
                 object obj = ResourceManager.GetObject("Blue and White Vintage School Logo (2)", resourceCulture);
@@ -224,6 +244,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_and_White_Vintage_School_Logo__9_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue and White Vintage School Logo (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cms001 {
             get {
                 object obj = ResourceManager.GetObject("cms001", resourceCulture);
@@ -257,6 +287,56 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap Diseño_sin_título__1_ {
             get {
                 object obj = ResourceManager.GetObject("Diseño sin título (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__10_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (10)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__11_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (11)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__12_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (12)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__13_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__14_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (14)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

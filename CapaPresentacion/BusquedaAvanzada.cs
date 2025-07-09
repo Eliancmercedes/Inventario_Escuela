@@ -25,7 +25,8 @@ namespace CapaPresentacion
 
             btnBuscar.Click += btnBuscar_Click;
             btnVolver.Click += btnVolver_Click;
-            txtMarca.Enter += txt_BorrarTexto;
+            CargarMarcasEnComboBox();
+
             txtPrecioMin.Enter += txt_BorrarTexto;
             txtPrecioMax.Enter += txt_BorrarTexto;
             txtPrecioMin.KeyPress += SoloEnteros_KeyPress;
@@ -35,7 +36,9 @@ namespace CapaPresentacion
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string marcaFiltro = txtMarca.Text.ToLower().Trim();
+            string marcaSeleccionada = cbMarca.SelectedItem.ToString();
+            bool filtrarPorMarca = marcaSeleccionada != "Todas";
+
             string tipoSeleccionado = cbTipo.SelectedItem.ToString();
 
             bool tienePrecioMin = int.TryParse(txtPrecioMin.Text, out int precioMin);
@@ -43,10 +46,10 @@ namespace CapaPresentacion
 
             var resultado = TodosLosArticulos
                 .Where(a =>
-                    (tipoSeleccionado == "Todos" || a.Tipo == tipoSeleccionado) &&
-                    (string.IsNullOrWhiteSpace(marcaFiltro) || a.Marca.ToLower().Contains(marcaFiltro)) &&
-                    (!tienePrecioMin || a.Precio >= precioMin) &&
-                    (!tienePrecioMax || a.Precio <= precioMax)
+                (tipoSeleccionado == "Todos" || a.Tipo == tipoSeleccionado) &&
+                (!filtrarPorMarca || a.Marca.Equals(marcaSeleccionada, StringComparison.OrdinalIgnoreCase)) &&
+                (!tienePrecioMin || a.Precio >= precioMin) &&
+                (!tienePrecioMax || a.Precio <= precioMax)
                 )
                 .ToList();
 
@@ -79,6 +82,20 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+        private void CargarMarcasEnComboBox()
+        {
+            var marcasUnicas = TodosLosArticulos
+                .Select(a => a.Marca)
+                .Distinct()
+                .OrderBy(m => m)
+                .ToList();
+
+            cbMarca.Items.Clear();
+            cbMarca.Items.Add("Todas"); // Opción para no filtrar por marca
+            cbMarca.Items.AddRange(marcasUnicas.ToArray());
+            cbMarca.SelectedIndex = 0; // Selecciona "Todas" por defecto
+        }
+
 
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -123,5 +140,9 @@ namespace CapaPresentacion
             }
         }
 
+        private void lblPrecioMax_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

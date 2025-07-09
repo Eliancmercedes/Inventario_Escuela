@@ -102,7 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Diseño_sin_título__9_;
+            BackgroundImage = Properties.Resources.Diseño_sin_título__14_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1284, 611);
             Controls.Add(btnMenu);

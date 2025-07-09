@@ -46,7 +46,7 @@
             // 
             // PNMenu
             // 
-            PNMenu.BackColor = Color.DeepSkyBlue;
+            PNMenu.BackColor = Color.FromArgb(28, 84, 132);
             PNMenu.Controls.Add(panel3);
             PNMenu.Controls.Add(btnIrBusqueda);
             PNMenu.Controls.Add(btnIrAnalisis);
@@ -62,7 +62,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(215, 216, 218);
-            panel3.Location = new Point(3, 180);
+            panel3.Location = new Point(3, 242);
             panel3.Name = "panel3";
             panel3.Size = new Size(5, 43);
             panel3.TabIndex = 9;
@@ -75,7 +75,7 @@
             btnIrBusqueda.ForeColor = SystemColors.ButtonHighlight;
             btnIrBusqueda.Image = Properties.Resources.icons8_buscar_100__1_1;
             btnIrBusqueda.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIrBusqueda.Location = new Point(8, 178);
+            btnIrBusqueda.Location = new Point(12, 240);
             btnIrBusqueda.Name = "btnIrBusqueda";
             btnIrBusqueda.Size = new Size(242, 45);
             btnIrBusqueda.TabIndex = 8;
@@ -91,7 +91,7 @@
             btnIrAnalisis.ForeColor = SystemColors.ButtonHighlight;
             btnIrAnalisis.Image = Properties.Resources.icons8_gráfico_combinado_48;
             btnIrAnalisis.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIrAnalisis.Location = new Point(9, 106);
+            btnIrAnalisis.Location = new Point(11, 157);
             btnIrAnalisis.Name = "btnIrAnalisis";
             btnIrAnalisis.Size = new Size(239, 45);
             btnIrAnalisis.TabIndex = 7;
@@ -102,7 +102,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(215, 216, 218);
-            panel2.Location = new Point(3, 108);
+            panel2.Location = new Point(3, 159);
             panel2.Name = "panel2";
             panel2.Size = new Size(5, 43);
             panel2.TabIndex = 6;
@@ -110,7 +110,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(215, 216, 218);
-            panel1.Location = new Point(3, 28);
+            panel1.Location = new Point(3, 82);
             panel1.Name = "panel1";
             panel1.Size = new Size(5, 43);
             panel1.TabIndex = 5;
@@ -123,9 +123,9 @@
             btnIrGestion.ForeColor = SystemColors.ButtonHighlight;
             btnIrGestion.Image = Properties.Resources.icons8_engranaje_48;
             btnIrGestion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIrGestion.Location = new Point(9, 28);
+            btnIrGestion.Location = new Point(9, 82);
             btnIrGestion.Name = "btnIrGestion";
-            btnIrGestion.Size = new Size(244, 45);
+            btnIrGestion.Size = new Size(244, 43);
             btnIrGestion.TabIndex = 4;
             btnIrGestion.Text = "Gestion";
             btnIrGestion.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             // 
             // PNContenedor
             // 
-            PNContenedor.BackColor = Color.FromArgb(215, 216, 218);
+            PNContenedor.BackColor = Color.FromArgb(244, 244, 244);
             PNContenedor.Controls.Add(pictureBox2);
             PNContenedor.Dock = DockStyle.Fill;
             PNContenedor.Location = new Point(256, 40);
@@ -144,8 +144,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackgroundImage = Properties.Resources.Blue_and_White_Vintage_School_Logo__8_;
-            pictureBox2.Location = new Point(256, 37);
+            pictureBox2.BackgroundImage = Properties.Resources.Blue_and_White_Vintage_School_Logo__11_;
+            pictureBox2.Location = new Point(261, 70);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(520, 515);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -154,7 +154,7 @@
             // 
             // PN1
             // 
-            PN1.BackColor = Color.DeepSkyBlue;
+            PN1.BackColor = Color.FromArgb(28, 84, 132);
             PN1.Dock = DockStyle.Top;
             PN1.Location = new Point(0, 0);
             PN1.Name = "PN1";
